@@ -164,120 +164,39 @@ export default function DashboardPage() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex flex-col">
-          <div className="flex items-center gap-4 border-b bg-muted/40 px-6 py-3">
-            <h1 className="text-lg font-semibold">Dashboard</h1>
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="ml-auto">
-              <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="profile">Profile</TabsTrigger>
-              </TabsList>
-            </Tabs>
-            <Button variant="ghost" size="icon">
-              <Bell className="h-5 w-5" />
-              <span className="sr-only">Notifications</span>
-            </Button>
-          </div>
 
-          <div className="flex-1 space-y-6 p-6">
-            <TabsContent value="overview" className="space-y-6">
-              {/* User Stats Summary */}
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
-                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Total Platforms</CardTitle>
-                    <BarChart3 className="h-4 w-4 text-muted-foreground" />
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-2xl font-bold">4</div>
-                    <p className="text-xs text-muted-foreground">LinkedIn, GitHub, LeetCode, Twitter</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">LeetCode Problems</CardTitle>
-                    <Code2 className="h-4 w-4 text-muted-foreground" />
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-2xl font-bold">187</div>
-                    <p className="text-xs text-muted-foreground">+23 from last month</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">GitHub Contributions</CardTitle>
-                    <Github className="h-4 w-4 text-muted-foreground" />
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-2xl font-bold">432</div>
-                    <p className="text-xs text-muted-foreground">+89 from last month</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">LinkedIn Connections</CardTitle>
-                    <Linkedin className="h-4 w-4 text-muted-foreground" />
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-2xl font-bold">573</div>
-                    <p className="text-xs text-muted-foreground">+42 from last month</p>
-                  </CardContent>
-                </Card>
-              </div>
+<main className="flex flex-col">
+  <div className="flex items-center gap-4 border-b bg-muted/40 px-6 py-3">
+    <h1 className="text-lg font-semibold">Dashboard</h1>
+    {/* Remove this Tabs */}
+    {/* <Tabs value={activeTab} onValueChange={setActiveTab} className="ml-auto">
+      <TabsList>
+        <TabsTrigger value="overview">Overview</TabsTrigger>
+        <TabsTrigger value="profile">Profile</TabsTrigger>
+      </TabsList>
+    </Tabs> */}
+    <Button variant="ghost" size="icon">
+      <Bell className="h-5 w-5" />
+      <span className="sr-only">Notifications</span>
+    </Button>
+  </div>
 
-              {/* Platform Analytics */}
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="col-span-1">
-                  <CardHeader>
-                    <CardTitle>GitHub Activity</CardTitle>
-                    <CardDescription>Your repository and contribution analytics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <GitHubAnalytics />
-                  </CardContent>
-                </Card>
-                <Card className="col-span-1">
-                  <CardHeader>
-                    <CardTitle>LeetCode Progress</CardTitle>
-                    <CardDescription>Problem-solving statistics by category</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <LeetCodeAnalytics />
-                  </CardContent>
-                </Card>
-                <Card className="col-span-1">
-                  <CardHeader>
-                    <CardTitle>LinkedIn Growth</CardTitle>
-                    <CardDescription>Connection and engagement metrics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <LinkedInAnalytics />
-                  </CardContent>
-                </Card>
-                <Card className="col-span-1">
-                  <CardHeader>
-                    <CardTitle>Twitter Analytics</CardTitle>
-                    <CardDescription>Follower growth and engagement</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <TwitterAnalytics />
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
+  {/* Move Tabs here and wrap both TabsList and TabsContent */}
+  <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 space-y-6 p-6">
+    <TabsList>
+      <TabsTrigger value="overview">Overview</TabsTrigger>
+      <TabsTrigger value="profile">Profile</TabsTrigger>
+    </TabsList>
 
-            <TabsContent value="profile">
-              <Card>
-                <CardHeader>
-                  <CardTitle>User Profile</CardTitle>
-                  <CardDescription>Manage your personal information and goals</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <UserProfile />
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </div>
+    <TabsContent value="overview" className="space-y-6">
+      {/* ...overview content... */}
+    </TabsContent>
+
+    <TabsContent value="profile">
+      {/* ...profile content... */}
+    </TabsContent>
+  </Tabs>
+
         </main>
       </div>
     </div>
