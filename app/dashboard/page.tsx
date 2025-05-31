@@ -151,8 +151,8 @@ export default function DashboardPage() {
                   className="rounded-full"
                 />
                 <div className="grid gap-0.5 text-sm">
-                  <div className="font-medium">John Doe</div>
-                  <div className="text-xs text-muted-foreground">john@example.com</div>
+                  <div className="font-medium">Vishal Tiwari (static data )</div>
+                  <div className="text-xs text-muted-foreground">vishal.urban.wheels@gmail.com</div>
                 </div>
                 <Button variant="ghost" size="icon" className="ml-auto">
                   <LogOut className="h-4 w-4" />
@@ -165,21 +165,22 @@ export default function DashboardPage() {
 
         {/* Main Content */}
         <main className="flex flex-col">
-          <div className="flex items-center gap-4 border-b bg-muted/40 px-6 py-3">
+          <div className="flex items-center gap-4 border-b bg
+          -muted/40 px-6 py-3">
             <h1 className="text-lg font-semibold">Dashboard</h1>
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="ml-auto">
-              <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="profile">Profile</TabsTrigger>
-              </TabsList>
-            
             <Button variant="ghost" size="icon">
               <Bell className="h-5 w-5" />
               <span className="sr-only">Notifications</span>
             </Button>
           </div>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="ml-auto">
+            <TabsList>
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="profile">Profile</TabsTrigger>
+            </TabsList>
+       
 
-          <div className="flex-1 space-y-6 p-6">
+         
             <TabsContent value="overview" className="space-y-6">
               {/* User Stats Summary */}
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -278,7 +279,7 @@ export default function DashboardPage() {
               </Card>
             </TabsContent>
             </Tabs>
-          </div>
+         
         </main>
       </div>
     </div>
