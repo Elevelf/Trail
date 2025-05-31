@@ -1,5 +1,14 @@
 {
-  "name": "Self Monitoring ",
+  "name":"Self monitoring dashboard",
+  "description": "A self-monitoring dashboard for personal and professional use, built with Next.js and Radix UI.",
+  "keywords": [
+    "nextjs",
+    "radix-ui",
+    "dashboard",
+    "self-monitoring",
+    "personal",
+    "professional"
+  ],
   "version": "0.1.0",
   "private": true,
   "scripts": {
